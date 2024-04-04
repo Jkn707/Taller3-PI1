@@ -16,7 +16,7 @@ with open('movie_titles.json', 'r') as file:
     file_content = file.read()
     movies = json.loads(file_content)
 
-print(movies[0])
+print(movies[1])
 
 
 #Se genera una función auxiliar que ayudará a la comunicación con la api de openai
@@ -43,8 +43,8 @@ instruction_genre = "Vas a calificar la película en un género específico"
 instruction_year = "Si sabes, vas a decir el año de lanzamiento de la película. Por favor únicamente el año de forma que se pueda convertir en un dato numérico"
 
 #Definimos el prompt
-movie = movies[0]['title']
-prompt = f"{instruction} Has una descripción de la película {movie}"
+movie = movies[1]['title']
+prompt = f"{instruction} Has una descripción de la película {movie}. {instruction_genre} y {instruction_year}"
 
 print(prompt)
 
