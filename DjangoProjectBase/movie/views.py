@@ -9,14 +9,15 @@ import io
 import urllib, base64
 
 from dotenv import load_dotenv, find_dotenv
+import os
 import json
 from openai import OpenAI
 import numpy as np
 
-
+_ = load_dotenv('C:\\Users\\USER\\Documents\\Universidad\\Semestre 5\\Proyecto Integrador I\\Talleres\\Taller 3\\Taller3-PI1\\openAI.env')
 client = OpenAI(
     # This is the default and can be omitted
-    api_key="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"
+    api_key=os.environ.get('openAI_api_key'),
 )
 
 with open('C:\\Users\\USER\\Documents\\Universidad\\Semestre 5\\Proyecto Integrador I\\Talleres\\Taller 3\\Taller3-PI1\\movie_descriptions_embeddings.json', 'r') as file:
